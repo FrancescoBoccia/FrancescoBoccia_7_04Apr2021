@@ -105,7 +105,7 @@ export default {
                 deleted: false,
               };
               localStorage.setItem("userToken", data.token);
-              localStorage.setItem("userData", JSON.stringify(data.user));
+              localStorage.setItem("userData", JSON.stringify(storage));
               router.push({ name: "Posts" });
             }
           })
