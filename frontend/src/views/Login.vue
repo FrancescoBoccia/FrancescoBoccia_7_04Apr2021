@@ -84,14 +84,6 @@ export default {
             if (!data.token) {
               this.errorMessage = "User not found";
             } else {
-            const storage = {
-                id: data.user.id,
-                firstName: data.user.firstName,
-                lastName: data.user.lastName,
-                email: data.user.email,
-                imageUrl: data.user.imageUrl,
-                deleted: false,
-              };
               localStorage.setItem("userToken", data.token);
               localStorage.setItem("userData", JSON.stringify(storage));
               router.push({ name: "Posts" });
