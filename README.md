@@ -1,6 +1,6 @@
 # Project setup
 
-# frontend
+# Front-End
 
 ```
 cd frontend
@@ -8,7 +8,7 @@ npm install
 npm run serve
 ```
 
-## backend
+## Back-End
 
 ```
 cd backend
