@@ -25,14 +25,6 @@ exports.login = async (req, res, next) => {
     const response = await User.authenticate(req.body.email, req.body.password);
 
     if (response.valid) {
-      const storage = {
-        id: response.user.id,
-        firstName: response.user.firstName,
-        lastName: response.user.lastName,
-        email: response.user.email,
-        imageUrl: response.user.imageUrl,
-        deleted: false,
-      };
       res.status(201).json(newToken(response.user));
     } else {
       res.status(401).json({ error: response.message });
