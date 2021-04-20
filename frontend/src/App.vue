@@ -54,6 +54,7 @@ export default {
 
   #nav #logo {
     max-width: 180px;
+    margin-left: 5rem;
   }
 }
 

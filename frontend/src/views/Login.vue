@@ -3,9 +3,7 @@
     <b-container fluid>
       <b-row class="text-center justify-content-center">
         <b-col cols="12" lg="4">
-          <b-card
-            class="border-0 shadow p-2 mt-4"
-          >
+          <b-card class="border-0 shadow p-2 mt-4">
             <div class="pt-sm-3 pt-lg-0">
               <b-card-text class="login-text h3">Log In</b-card-text>
 
@@ -84,6 +82,14 @@ export default {
             if (!data.token) {
               this.errorMessage = "User not found";
             } else {
+              const storage = {
+                id: data.user.id,
+                firstName: data.user.firstName,
+                lastName: data.user.lastName,
+                email: data.user.email,
+                imageUrl: data.user.imageUrl,
+                deleted: false,
+              };
               localStorage.setItem("userToken", data.token);
               localStorage.setItem("userData", JSON.stringify(storage));
               router.push({ name: "Posts" });
@@ -115,7 +121,6 @@ a {
   height: 1px;
   background-color: black;
 }
-
 
 .account-input:focus {
   border: none;
